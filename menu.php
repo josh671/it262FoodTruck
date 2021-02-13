@@ -47,11 +47,14 @@ include 'Burgers.php';
             }//end for each 
         ?>
 
-            <div>
-                <input type=submit value="total">
+            <div class="submit">
+                <input type=submit value="Take Total">
             </div>
 
 </form> 
+<!-- start of total -->
+<div class="total">
+
 <h2> Your Total: 
      <?php 
     $total = 0; 
@@ -59,6 +62,7 @@ include 'Burgers.php';
     foreach($burgers as $burger){ 
             $fee = $burger->price * $burger->quantity; 
            $total = $total + $fee; 
+            $formatTotal = number_format($total, 2, '.', '');
         }
 ?>
 
@@ -66,10 +70,10 @@ include 'Burgers.php';
 
 
 <?php 
-    echo '<p>$'.$total.'</p>';
+    echo '<p class="finalTotal">$'.$formatTotal.'</p>';
 
 ?>
-
+</div> 
 
 
 
