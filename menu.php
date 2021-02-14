@@ -24,7 +24,7 @@ include 'Burgers.php';
 <form action="" method="post">
         <?php
             foreach($burgers as $burger){ 
-                    echo '<div class="divs">
+                    echo '<div class="menu-items">
                           <h3>'.$burger->name.'</h3>
                           <img class="menu-images" src=images/'.$burger->imageName.'>
                           <p>' .$burger->description.'</p><br>
@@ -64,6 +64,8 @@ include 'Burgers.php';
            $total = $total + $fee; 
             $formatTotal = number_format($total, 2, '.', '');
         }
+    
+        
 ?>
 
  </h2> 
@@ -71,6 +73,13 @@ include 'Burgers.php';
 
 <?php 
     echo '<p class="finalTotal">$'.$formatTotal.'</p>';
+    $burgers_purchased = array(); 
+    foreach($burgers as $burger){ 
+        if($burger->quantity > 0){ 
+    echo '<p clas="b_name">'.$burger->name.'  '.$burger->quantity. ' Price per '.$burger->price.'</p>'; 
+
+        }
+    }
 
 ?>
 </div> 
@@ -88,10 +97,11 @@ include 'Burgers.php';
 
 
 <!-- 
-1. set up form, css, and class pages -8 hours. 2/10/21
-
-
-
-
-
+7. finalized all code - 2 hr josh. 
+6. pushed and pulled from git to work on doc -1min. 
+5. added menu items to total ticket. 1 hr -josh
+4. created and did all css - 1hr josh. 
+3. continued on menu.php to add menu items. -1 hr -josh
+2. continued to add more burgers to class after page was created 30mins-josh
+1. contacted kyrah to help get started 2hrs -josh. 
  -->

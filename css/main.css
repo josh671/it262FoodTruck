@@ -106,10 +106,9 @@ fieldset{
 }
 
 
-.divs{ 
+.menu-items{ 
     width: 300px; 
     height: 350px;
-    
     display: block; 
     border: 2px solid black;
     padding: 20px; 
@@ -125,8 +124,7 @@ fieldset{
 
 .total { 
     width: 200px; 
-    height: 100px; 
-    display: block; 
+    display: block;
     background: white; 
     border: solid 1px black;
     position: fixed; 
@@ -135,13 +133,17 @@ fieldset{
     border-radius: 5px; 
     box-shadow: -10px 5px 10px 1px black;
     text-align: center; 
+    overflow:inherit; 
+    padding: 10px; 
 } 
 
 .finalTotal{ 
     font-size: 25px; 
     margin-top: 10px;
+    
 } 
 
 h2{ 
     margin-top: 10px; 
-}
+} 
+
