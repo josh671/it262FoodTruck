@@ -1,5 +1,9 @@
 <?php
+
 //menu.php
+
+/* THERE ARE NO USER EDITABLE FIELDS IN THIS DOCUMENT */
+
 include 'Burgers.php'; 
 ?>
 
@@ -12,12 +16,12 @@ include 'Burgers.php';
     <link rel="stylesheet" href="./css/main.css?php echo time(); ?>"> 
     <title><?php echo $title ?></title>
     <link rel="stylesheet" href="./css/main.css?v=<?php echo time(); ?>">
-<!-- Why is there a second stylesheet link? -->
 
 </head>
 <body >
 <header>
-<img id='logo' src="images/logo.jpg">
+<h1>STEELERS NATION</h1>
+    <img id='logo' src="images/logo.jpg">
 </header>
 
 <form action="" method="post">
@@ -49,37 +53,67 @@ foreach($burgers as $burger){
 ?>
 
 <div class="submit">
-    <input type=submit value="Take Total">
+    <input type=submit value="Get Total">
 </div>
 </form>
 
 <!-- start of total -->
 <div class="total">
-<h2> Your Total: 
-     <?php 
-    $total = 0; 
-    foreach($burgers as $burger){ 
-        $fee = $burger->price * $burger->quantity; 
-        $total = $total + $fee; 
-        $formatTotal = number_format($total, 2, '.', '');
-    } 
-    ?>
-</h2>
-<?php 
-    echo '<p class="finalTotal">$'.$formatTotal.'</p>';
+<?php
+// burger-by-burger qty //
     $burgers_purchased = array(); 
     foreach($burgers as $burger){ 
         if($burger->quantity > 0){ 
-        echo '<p clas="b_name">'.$burger->name.'  '.$burger->quantity. ' Price per '.$burger->price.'</p>';
+        echo '<p clas="b_name">'.$burger->name.' $'.$burger->price.' x '.$burger->quantity. '</p>';
         }
-    }
+    } // end burger-by-burger qty //
+    // subtotal //
+    $subtotal = 0; 
+    foreach($burgers as $burger){ 
+        $itemTotal = $burger->price * $burger->quantity; 
+        $subtotal = $subtotal + $itemTotal; 
+        $formatSubtotal = number_format($subtotal, 2, '.', '');
+    } 
+    // echo '<p class="finalTotal">$'.$formatSubTotal.'</p>';
+    echo '<h5>Subtotal: $'.$formatSubtotal.'</h5>';
+    $totalTax = $subtotal * $totalTaxRate;
+    $formatTotalTax = number_format($totalTax, 2, '.', '');
+    echo '<p>Tax: $'.$formatTotalTax.'</p>';
+    $grandTotal = $subtotal + $totalTax;
+    $formatGrandTotal = number_format($grandTotal, 2, '.', '');
+    echo '<h4>Grand Total: </h4>';
+    echo '<h3>$'.$formatGrandTotal.'</h3>';
+    
 ?>
-</div> 
+
+</div>
+<!-- fancy footer -->
+<footer>
+<ul>
+    <li>Copyright <?php
+    $startDate = 2019;
+    $currentDate = date('Y');
+    if($startDate == $currentDate){
+            echo $currentDate;
+    }else{
+            echo ' '.$startDate.'-'.$currentDate.'';
+    } //end else
+    ?>
+    </li>
+    <li>All Rights Reserved</li>
+    <li><a href="">Web design by Josh Bordallo</a></li>
+    <li><a href='http://validator.w3.org/check/referer' target='_blank'>Valid HTML</a> ~ <a href='http://jigsaw.w3.org/css-validator/check?uri=referer' target='_blank'>Valid CSS</a></li>
+</ul>
+</footer>
+<!-- end wrapper -->
 </body>
 </html> 
 
-<!-- 
-
+<!--
+12. 2/14/21 Joon edited comments and layout, edited project doc (.5hr)
+11. 2/14/21 Joon edited display for subtotal and tax ( 1.5 hr)
+10. 2/14/21 Joon added $ID to $burgers arrays, added comments for client editing, worked on subtotal and tax logic ( 2 hr) 
+9. 2/14/21 Joon testing, code review, added commented code for addExtra function, declared $title, comments, formatting, minor edits, documentation (4 hr)
 8. 2/14 Minor edits, formatting, declared $title in Burgers.php, 1.5hr Joon
 7. finalized all code - 2 hr josh. 
 6. pushed and pulled from git to work on doc -1min. 
