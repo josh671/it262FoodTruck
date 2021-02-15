@@ -1,24 +1,39 @@
 *{ 
     margin: 0; 
     padding: 0; 
-    box-sizing: border-box; 
+    box-sizing: border-box;
+    font-family: Helvetica;
+    
 } 
 
-header { 
+header{ 
     width: 100%; 
     display: block; 
     background-color: black;
     overflow: hidden;
-} 
+}
+
+body{
+    background-color:grey;
+}
+
+h3{
+    font-size:1.5em;
+}
+
+h4{
+    color:red;
+    font-family: 'Impact';
+    font-size: 1.5em;
+}
 
 .steelersLogo{ 
-    width: 200px; 
+    width: 100%; 
     margin: 0 auto; 
     display: block;
     clear: left;
-  
-}
 
+}
 
 nav ul{ 
     display: block;
@@ -59,6 +74,7 @@ form{
     margin: 0 auto; 
     overflow: hidden;
     margin-top: 10px;
+    
 }
 
 fieldset{ 
@@ -68,10 +84,12 @@ fieldset{
 }
 
 .menu-images{ 
-    width: 300px;
     height: 175px; 
     border: 1px solid black;
-    box-shadow: 1px 2px; 
+    box-shadow: 2px 3px;
+    width: 250px;
+    margin-bottom: 10px;
+    margin-top: 5px; 
 } 
 
 #logo { 
@@ -80,18 +98,12 @@ fieldset{
     margin: 0 auto; 
 } 
 
-.menu-images{ 
-    width: 250px;
-    margin-bottom: 10px;
-    margin-top: 5px; 
-}
-
 .submit{ 
     width: 150px; 
     height: 50px; 
     display: block; 
     position: fixed; 
-    top: 150px; 
+    top: 70px; 
     left: 250px;
     
 } 
@@ -100,9 +112,10 @@ fieldset{
     width: 100%; 
     height: 100%; 
     border-radius: 5px; 
-    font-size: 1.2em;
+    font-size: 1.7em;
+    font-family: Impact;
     box-shadow: -10px 5px 10px 1px black;
-
+    background-color: greenyellow;
 }
 
 
@@ -119,16 +132,17 @@ fieldset{
     float: left;
     overflow: hidden;
     margin-right: 5px;
+    background-color:gold;
     
 } 
 
 .total { 
     width: 200px; 
     display: block;
-    background: white; 
+    background: gold; 
     border: solid 1px black;
     position: fixed; 
-    top: 150px; 
+    top: 35px; 
     margin-left: 20px; 
     border-radius: 5px; 
     box-shadow: -10px 5px 10px 1px black;
@@ -141,9 +155,30 @@ fieldset{
     font-size: 25px; 
     margin-top: 10px;
     
-} 
+}
+
+h1{
+    color:gold;
+    text-align:center;
+    font-size: 3em;
+    font-family: Impact;
+}
 
 h2{ 
     margin-top: 10px; 
 } 
 
+footer{
+    text-align:center;
+    margin-bottom: 15px;
+}
+
+ul{
+    text-align:center;
+    list-style-type: none;
+}
+
+li{
+    text-align:center;
+    font-family:Impact;
+}
