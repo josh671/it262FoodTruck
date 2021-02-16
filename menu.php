@@ -13,7 +13,7 @@ include 'Burgers.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css?php echo time(); ?>"> 
+    <!-- <link rel="stylesheet" href="./css/main.css?php echo time(); ?>">  -->
     <title><?php echo $title ?></title>
     <link rel="stylesheet" href="./css/main.css?v=<?php echo time(); ?>">
 
@@ -21,25 +21,25 @@ include 'Burgers.php';
 <body >
 <header>
 <h1>STEELERS NATION</h1>
-    <img id='logo' src="images/logo.jpg">
+    <img id='logo' src="images/logo.jpg" alt="Steelers Nation logo">
 </header>
 
-<form action="" method="post">
+<form action="menu.php" method="post">
 
 <?php
-// fore each loop //
+// foreach loop //
 foreach($burgers as $burger){ 
     echo '<div class="menu-items">
         <h3>'.$burger->name.'</h3>
-        <img class="menu-images" src=images/'.$burger->imageName.'>
-        <p>' .$burger->description.'</p><br>
+        <img class="menu-images" src=images/'.$burger->imageName.' alt="burger photo">
+        <p>'.$burger->description.'</p><br>
         <select name="'.$burger->name.'" required> 
         <option value="0">Choose How Many!</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value="1" label="1">
+        <option value="2" label="2">
+        <option value="3" label="3">
+        <option value="4" label="4">
+        <option value="5" label="5">
         </select>
         </div>';    
         
@@ -101,7 +101,8 @@ foreach($burgers as $burger){
     ?>
     </li>
     <li>All Rights Reserved</li>
-    <li><a href="">Web design by Josh Bordallo</a></li>
+    <!-- <li>Web design by Josh Bordallo</li> -->
+    <li><a href="menu.php">Web design by Josh Bordallo</a></li>
     <li><a href='http://validator.w3.org/check/referer' target='_blank'>Valid HTML</a> ~ <a href='http://jigsaw.w3.org/css-validator/check?uri=referer' target='_blank'>Valid CSS</a></li>
 </ul>
 </footer>
@@ -110,11 +111,12 @@ foreach($burgers as $burger){
 </html> 
 
 <!--
-12. 2/14/21 Joon edited comments and layout, edited project doc (.5hr)
-11. 2/14/21 Joon edited display for subtotal and tax ( 1.5 hr)
-10. 2/14/21 Joon added $ID to $burgers arrays, added comments for client editing, worked on subtotal and tax logic ( 2 hr) 
-9. 2/14/21 Joon testing, code review, added commented code for addExtra function, declared $title, comments, formatting, minor edits, documentation (4 hr)
-8. 2/14 Minor edits, formatting, declared $title in Burgers.php, 1.5hr Joon
+13. 2/15/21 Joon made final edits and styling, ensured html validation (2 hr)
+12. 2/14/21 Joon added footer with validators, lots of styling and tweaking (1 hr)
+11. 2/14/21 Joon edited comments and layout, edited project doc (.5hr)
+10. 2/14/21 Joon edited display for subtotal and tax ( 1.5 hr)
+9. 2/14/21 Joon added $ID to $burgers arrays, added comments for client editing, worked on subtotal and tax logic ( 2 hr) 
+8. 2/14/21 Joon testing, code review, added commented code for addExtra function, declared $title, comments, formatting, minor edits, documentation (4 hr)
 7. finalized all code - 2 hr josh. 
 6. pushed and pulled from git to work on doc -1min. 
 5. added menu items to total ticket. 1 hr -josh
