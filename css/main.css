@@ -11,10 +11,14 @@ header{
     display: block; 
     background-color: black;
     overflow: hidden;
+    border-style:solid;
+    border-width:5px;
+    border-color:gold;
 }
 
 body{
     background-color:grey;
+
 }
 
 h3{
@@ -81,6 +85,7 @@ fieldset{
     width: 500px;
     background: grey; 
     padding: 20px;
+    
 }
 
 .menu-images{ 
@@ -169,8 +174,26 @@ h2{
 } 
 
 footer{
+    color:gold;
+    background-color:black;
     text-align:center;
     margin-bottom: 15px;
+    border-style:solid;
+    border-top-width:5px;
+    border-color:gold;
+}
+
+/* A link that has not been visited */
+a:link {
+    color: gold;
+}
+/* A link that has been visited */
+a:visited {
+    color: gold;
+}
+/* A link that is hovered on */
+a:hover {
+    color: red;
 }
 
 ul{
